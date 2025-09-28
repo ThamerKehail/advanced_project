@@ -1,6 +1,7 @@
 import 'package:advanced_project/presentation/forget_password/forget_password_view.dart';
 import 'package:advanced_project/presentation/login/login_view.dart';
 import 'package:advanced_project/presentation/main/main_view.dart';
+import 'package:advanced_project/presentation/onboarding/onboarding_view.dart';
 import 'package:advanced_project/presentation/register/register_view.dart';
 import 'package:advanced_project/presentation/resources/strings_manager.dart';
 import 'package:advanced_project/presentation/splash/splash_view.dart';
@@ -14,7 +15,8 @@ class Routes {
   static const String forgotPasswordRoute = '/forgot-password';
   static const String mainRoute = '/main';
   static const String homeRoute = '/home';
-    static const String storeDetailsRoute = '/store-details';
+  static const String storeDetailsRoute = '/store-details';
+  static const String onBoardingRoute = '/on-boarding';
 }
 
 class RouteGenerator {
@@ -32,6 +34,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const MainView());
       case Routes.storeDetailsRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_) => const OnboardingView());
 
       default:
         return unDefinedRoute();

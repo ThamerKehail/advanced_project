@@ -1,3 +1,4 @@
+import 'package:advanced_project/presentation/resources/routes_manager.dart';
 import 'package:advanced_project/presentation/resources/theme_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,6 @@ class MyApp extends StatefulWidget {
   // factory constructor
   factory MyApp() => _instance;
 
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -18,9 +18,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: getAppTheme(),
-      home: const SizedBox(width: 200, height: 200, child: FlutterLogo()),
+      onGenerateRoute: RouteGenerator.getRoute,
     );
   }
 }

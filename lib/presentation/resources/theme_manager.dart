@@ -3,6 +3,7 @@ import 'package:advanced_project/presentation/resources/font_manager.dart';
 import 'package:advanced_project/presentation/resources/styles_manager.dart';
 import 'package:advanced_project/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 ThemeData getAppTheme() {
   return ThemeData(
@@ -21,9 +22,14 @@ ThemeData getAppTheme() {
     // app bar theme
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      backgroundColor: ColorManager.primary,
-      elevation: AppSize.s4,
+      backgroundColor: ColorManager.white,
+      elevation: AppSize.s0,
       shadowColor: ColorManager.lightPrimary,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: ColorManager.white,
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.dark,
+      ),
       titleTextStyle: getRegularStyle(
         fontSize: FontSize.s16,
         color: ColorManager.white,
@@ -45,7 +51,7 @@ ThemeData getAppTheme() {
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppSize.s12),
-          ),
+        ),
         backgroundColor: ColorManager.primary,
         shadowColor: ColorManager.lightPrimary,
       ),
@@ -72,7 +78,6 @@ ThemeData getAppTheme() {
         color: ColorManager.grey,
         fontSize: FontSize.s12,
       ),
-      
     ),
     // form input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
@@ -94,7 +99,10 @@ ThemeData getAppTheme() {
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+        borderSide: BorderSide(
+          color: ColorManager.primary,
+          width: AppSize.s1_5,
+        ),
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
       errorBorder: OutlineInputBorder(
@@ -102,9 +110,12 @@ ThemeData getAppTheme() {
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+        borderSide: BorderSide(
+          color: ColorManager.primary,
+          width: AppSize.s1_5,
+        ),
         borderRadius: BorderRadius.circular(AppSize.s8),
       ),
-    ),  
+    ),
   );
 }
